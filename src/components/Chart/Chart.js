@@ -46,12 +46,13 @@ function Chart({ data: { confirmed, deaths, recovered }, country }) {
           {
             label: "People",
             backgroundColor: [
-              "rgba(0, 0, 255, .5)", 
-              "rgba(0, 255, 0, .5)", 
-              "rgba(255, 0, 0, .5)"
+              "rgba(0, 0, 255, .5)",
+              "rgba(0, 255, 0, .5)",
+              "rgba(255, 0, 0, .5)",
             ],
             data: [confirmed.value, recovered.value, deaths.value],
-          }]
+          },
+        ],
       }}
       options={{
         legend: { display: false },
@@ -60,7 +61,9 @@ function Chart({ data: { confirmed, deaths, recovered }, country }) {
     />
   ) : null;
 
-  return <div className={styles.container}>{country ? barChart : lineChart}</div>;
+  return (
+    <div className={styles.container}>{country ? barChart : lineChart}</div>
+  );
 }
 
 export default Chart;
